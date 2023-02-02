@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>小学生工作室</title>
+  <style>
+    body {
+      margin: 10;
+    }
+  </style>
+</head>   
+<script src="https://coderorangesoft.github.io/js/forAll.js"></script>
+<script>
+  function getTotal()
+  {
+    let id = document.getElementById("id").innerHTML=haveGetTotal();
+  }
+  function haveGetTotal()
+  {
+    var url = "https://api.codemao.cn/web/shops/16157/users"
+    // 申明一个XMLHttpRequest
+    var request = new XMLHttpRequest();
+    // 设置请求方法与路径 
+    request.open("get", url);
+    // 不发送数据到服务器 
+    request.send(null);
+    //XHR对象获取到返回信息后执行
+    request.onload = function () {
+    // 解析获取到的数据
+    var data = JSON.parse(request.responseText);
+    let totals = data.total;
+    }
+    return totals;
+  }
+</script>
+<style>
+  id {
+    color: red
+  }
+
+  header-top-left {
+    display: flex;
+    background-color: orange;
+    font-family: mojangles;
+    font-weight: lighter;
+    border-radius: 10px;
+    opacity: 0.7
+  }
+
+  footer-top-left {
+    display: flex;
+    background-color: orange;
+    font-family: mojangles;
+    font-weight: lighter;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0.7
+  }
+
+  #time {
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  html {
+    background-image: url(https://www.yangshangzhen.com/bing/wallpaper);
+  }
+
+  aeroBox {
+    display: block;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.7;
+    font-weight: lighter;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+
+  grey {
+    color: grey;
+  }
+</style>
+<header>
+  <h2>
+    <header-top-left id="header-top-left-text">
+      &nbsp>>>&nbsp欢迎来到&nbsp小学生工作室官网!
+    </header-top-left>
+  </h2>
+</header>
+
+<body onload="getTotal()">
+  <aeroBox>
+    <h1>小学生工作室官网</h1>
+    <h2>总述</h2>
+    <h3>
+      小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>
+      <br />
+      目前0级，共有<id id="id"></id>人
+    </h3>
+    <h2>门槛</h2>
+    <h3>
+      3赞
+      <br />
+      副室无门槛
+    </h3>
+    <h2>建立时间</h2>
+    <h3>
+      2022/11/5
+      <br />
+    </h3>
+    <h2>加入我们</h2>
+    <h3>
+      <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="OrangeSoft" title="OrangeSoft"></a>
+      <br />
+    </h3>
+  </aeroBox>
+</body>
+<footer>
+  <h2>
+    <footer-top-left>
+      &nbsp>>>&nbsp<a href="https://github.com/xxsgzs/xxsgzs.github.io"
+        style="border-radius:10px 10px 10px 10px;">在github上修改！</a>
+      </footerer-top-left>
+  </h2>
+</footer>
+
+</html>
