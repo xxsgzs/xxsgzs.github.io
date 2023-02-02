@@ -10,29 +10,32 @@
       margin: 10;
     }
   </style>
-</head>   
+</head>
 <script src="https://coderorangesoft.github.io/js/forAll.js"></script>
 <script>
   function getTotal()
   {
+    let functionVersion = "1.0"
     let id = document.getElementById("id").innerHTML=haveGetTotal();
+    console.log("getPotal version " + functionVersion + " for xxsgzs.github.io （￣︶￣）↗　")
   }
   function haveGetTotal()
   {
-    var url = "https://api.codemao.cn/web/shops/16157/users"
-    // 申明一个XMLHttpRequest
-    var request = new XMLHttpRequest();
-    // 设置请求方法与路径 
-    request.open("get", url);
-    // 不发送数据到服务器 
-    request.send(null);
-    //XHR对象获取到返回信息后执行
-    request.onload = function () {
-    // 解析获取到的数据
-    var data = JSON.parse(request.responseText);
-    let totals = data.total;
-    }
+    let functionVersion = "1.0"
+    console.log("haveGetTotal version " + functionVersion + " to use the getTotal []~(￣▽￣)~*")
+    let totals = 51;
     return totals;
+  }
+  function checkOp()
+  {
+    let functionVersion = "1.0"
+    //检测是否为管理员，如果是就显示修改按钮
+    if (document.cookie == 1)
+    {
+      let op = document.getElementById("op")
+      op.innerHTML = " <h2><footer-top-left>&nbsp>>>&nbsp<a href='https://github.com/xxsgzs/xxsgzs.github.io'style='border-radius:10px 10px 10px 10px;'>在github上修改!</a></footerer-top-left></h2>"
+    }
+    console.log("checkOp version " + functionVersion + " for xxsgzs.github.io ヾ(≧▽≦*)o")
   }
 </script>
 <style>
@@ -92,18 +95,18 @@
   </h2>
 </header>
 
-<body onload="getTotal()">
+<body onload="getTotal();checkOp()">
   <aeroBox>
     <h1>小学生工作室官网</h1>
     <h2>总述</h2>
     <h3>
       小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>
       <br />
-      目前0级，共有<id id="id"></id>人
+      目前<id>0</id>级,共有<id id="id"></id>人
     </h3>
     <h2>门槛</h2>
     <h3>
-      3赞
+      3赞(限时)
       <br />
       副室无门槛
     </h3>
@@ -114,18 +117,16 @@
     </h3>
     <h2>加入我们</h2>
     <h3>
-      <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="OrangeSoft" title="OrangeSoft"></a>
+      <a target="_blank"
+        href="https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="OrangeSoft" title="OrangeSoft"></a>
       <br />
     </h3>
   </aeroBox>
 </body>
 <footer>
-  <h2>
-    <footer-top-left>
-      &nbsp>>>&nbsp<a href="https://github.com/xxsgzs/xxsgzs.github.io"
-        style="border-radius:10px 10px 10px 10px;">在github上修改！</a>
-      </footerer-top-left>
-  </h2>
+  <div id="op">
+   
+  </div>
 </footer>
 
 </html>
