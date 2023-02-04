@@ -15,16 +15,17 @@
 <script>
   function getTotal()
   {
+    //获取工作室人数
     let functionVersion = "1.0"
     let id = document.getElementById("id").innerHTML=haveGetTotal();
     console.log("getPotal version " + functionVersion + " for xxsgzs.github.io （￣︶￣）↗　")
   }
   function haveGetTotal()
   {
-    //return totals
+    //返回工作室人数，目前不能联网
     let functionVersion = "1.0"
     console.log("haveGetTotal version " + functionVersion + " to use the getTotal []~(￣▽￣)~*")
-    let totals = 51;
+    let totals = 52;
     return totals;
   }
   function checkOp()
@@ -49,7 +50,6 @@
     background-color: orange;
     font-family: mojangles;
     font-weight: lighter;
-    border-radius: 10px;
     opacity: 0.7
   }
 
@@ -58,21 +58,18 @@
     background-color: orange;
     font-family: mojangles;
     font-weight: lighter;
-    border-radius: 10px 10px 10px 10px;
     opacity: 0.7
   }
 
   #time {
-    border-radius: 0px 0px 10px 10px;
   }
 
   html {
     background-image: url(https://www.yangshangzhen.com/bing/wallpaper);
   }
 
-  aeroBox {
+  div {
     display: block;
-    border-radius: 10px;
     background-color: white;
     opacity: 0.7;
     font-weight: lighter;
@@ -87,6 +84,23 @@
   grey {
     color: grey;
   }
+
+  #join_us {
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+  }
+
+  button {
+    background-color: lightblue;
+    width: 150px;
+    height: 30px;
+    font-size: 20px
+  }
+
+  button:hover {
+    background-color: lightgrey;
+  }
 </style>
 <header>
   <h2>
@@ -97,36 +111,43 @@
 </header>
 
 <body onload="getTotal();checkOp()">
-  <aeroBox>
-    <h1>小学生工作室官网</h1>
-    <h2>总述</h2>
-    <h3>
-      小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>
-      <br />
+    <div>
+      <h1>小学生工作室官网</h1>
+    </div>
+    <div>
+      <h2>总述</h2>
+      <h3>
+        小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>
+        <br />
       目前<id>0</id>级,共有<id id="id"></id>人
-    </h3>
-    <h2>门槛</h2>
-    <h3>
-      3赞(限时)
-      <br />
+      </h3>
+    </div>
+    <div>
+      <h2>门槛</h2>
+      <h3>
+        3赞(限时)
+        <br />
       副室无门槛
-    </h3>
-    <h2>建立时间</h2>
-    <h3>
-      2022/11/5
-      <br />
-    </h3>
-    <h2>加入我们</h2>
-    <h3>
-      <a target="_blank"
-        href="https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="OrangeSoft" title="OrangeSoft"></a>
-      <br />
-    </h3>
-  </aeroBox>
+      </h3>
+    </div>
+    <div>
+      <h2>建立时间</h2>
+      <h3>
+        2022/11/5
+        <br />
+      </h3>
+    </div>
+    <div>
+      <h2>加入我们</h2>
+      <h3 id="join_us">
+        <button onclick="window.open"><a href = "https://shequ.codemao.cn/work_shop/16157" style="color:black;!important">进入工作室</a></button>
+        <button onclick="window.open('https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr')">加入QQ群</button>
+      </h3>
+    </div>
 </body>
 <footer>
   <div id="op">
-   
+
   </div>
 </footer>
 
