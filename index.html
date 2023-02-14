@@ -24,13 +24,20 @@
 
 <body onload="getTotal();checkOp()">
   <ul class="layui-nav" lay-filter="">
-    <li class="layui-nav-item"><a href="/#allSay">总述</a></li>
-    <li class="layui-nav-item"><a href="/#how2join">门槛</a></li>
-    <li class="layui-nav-item"><a href="/#test">入室考试</a></li>
-    <li class="layui-nav-item"><a href="/#joinus">加入我们</a></li>
-    <li class="layui-nav-item"><a href="/#timeline">时间轴</a></li>
-    <li class="layui-nav-item"><a href="/#works"></a>优秀作品展示</li>
+    <li class="layui-nav-item" id="nav1"><a href="/#allSay">总述</a></li>
+    <li class="layui-nav-item" id="nav2"><a href="/#how2join">门槛</a></li>
+    <li class="layui-nav-item" id="nav3"><a href="/#test">入室考试</a></li>
+    <li class="layui-nav-item" id="nav4"><a href="/#joinus">加入我们</a></li>
+    <li class="layui-nav-item" id="nav5"><a href="/#timeline">时间轴</a></li>
+    <li class="layui-nav-item" id="nav6"><a href="/#works">优秀作品展示</a></li>
   </ul>
+
+  <script>
+    for (let i = 1;i <= 6;i++)
+    {
+      document.getElementById("nav"+i).classList.remove("layui-this");
+    }
+  </script>
 
   <diva>
     <h1 style="font-size:30px"><strong>小学生工作室官网</strong></h1>
@@ -55,7 +62,7 @@
 
     <hr />
 
-    <h2 id = "test">入室考试</h2>
+    <h2 id="test">入室考试</h2>
     <h3 id="join_us" style="display:block">
       2023年2月份(最新试卷)
       <br />
@@ -74,7 +81,7 @@
 
     <hr />
 
-    <h2 id ="timeline">时间轴</h2>
+    <h2 id="timeline">时间轴</h2>
 
     <li class="layui-timeline-item">
       <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
