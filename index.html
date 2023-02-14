@@ -111,15 +111,26 @@
   .shower {
     height: auto;
     display: flex;
-    gap: 5px
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
   .shower-item {
     display: block;
     background-color: white;
-    opacity: 1.0;
+    opacity: 0.7;
     border: 2px dashed black;
-    border-radius: 5px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .shower-item:hover {
+    display: block;
+    opacity: 1.0;
+    border: 2px solid black;
+    border-radius: 0px;
   }
 </style>
 <header>
@@ -172,45 +183,62 @@
     <hr />
 
     <h2>优秀作品展示</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px">
 
-    <h3 style="display:block">
-      优质Kitten作品
-      <div class="shower">
-        <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/174046876')"
-          style="text-align:center">
-          <img src="https://i.328888.xyz/2023/02/14/mUoSH.png" style="width:150px" />
-          <p style="text-align:center;font-size:25px">躲避滑稽</p>
-          <p style="text-align:center">来自:一只滑稽</p>
-          <p style="text-align:center">&nbsp推荐原因：优质的特效与特色的玩法&nbsp</p>
+      <h3 style="display:block">
+        优质Kitten作品
+        <div class="shower">
+          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/174046876')"
+            style="text-align:center">
+            <img src="https://i.328888.xyz/2023/02/14/mUoSH.png" style="width:150px" />
+            <p style="text-align:center;font-size:25px">躲避滑稽</p>
+            <p style="text-align:center">来自:一只滑稽</p>
+            <p style="text-align:center">&nbsp推荐原因：优质的特效与特色的玩法&nbsp</p>
+          </div>
+          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175798325')"
+            style="text-align:center">
+            <img src="https://i.328888.xyz/2023/02/14/mUPgt.png" style="width:270px" />
+            <p style="text-align:center;font-size:25px">OrangeOS</p>
+            <p style="text-align:center">来自:coderorangesoft</p>
+            <p style="text-align:center">&nbsp推荐原因：沉淀多年，拥有丰富的社区&nbsp</p>
+          </div>
         </div>
-        <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175798325')"
-          style="text-align:center">
-          <img src="https://i.328888.xyz/2023/02/14/mUPgt.png" style="width:270px" />
-          <p style="text-align:center;font-size:25px">OrangeOS</p>
-          <p style="text-align:center">来自:coderorangesoft</p>
-          <p style="text-align:center">&nbsp推荐原因：沉淀多年，拥有丰富的社区&nbsp</p>
-        </div>
-      </div>
-    </h3>
+      </h3>
 
-    <h3 style="display:block">
-      优质Python作品
-      <div class="shower">
-        <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175863014')"
-          style="text-align:center">
-          <br />
-          <img src="https://i.328888.xyz/2023/02/14/mni6d.jpeg" style="width:100px;border-radius:10px" />
-          <p style="text-align:center;font-size:25px">随机数概率生成器</p>
-          <p style="text-align:center">来自:coderorangesoft</p>
-          <p style="text-align:center">&nbsp推荐原因：抽奖小助手！看看自己有多欧！</p>
+      <h3 style="display:block">
+        优质Python作品
+        <div class="shower">
+          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175863014')"
+            style="text-align:center">
+            <br />
+            <img src="https://i.328888.xyz/2023/02/14/mni6d.jpeg" style="width:100px;border-radius:10px" />
+            <p style="text-align:center;font-size:25px">随机数概率生成器</p>
+            <p style="text-align:center">来自:coderorangesoft</p>
+            <p style="text-align:center">&nbsp推荐原因：抽奖小助手！看看自己有多欧！</p>
+          </div>
         </div>
-      </div>
-    </h3>
+      </h3>
+
+      <h3 style="display:block">
+        优质javascript脚本
+        <div class="shower">
+          <div class="shower-item"
+            onclick="window.open('https://greasyfork.org/zh-CN/scripts/460007-%E7%BC%96%E7%A8%8B%E7%8C%AB%E7%A4%BE%E5%8C%BA%E8%A7%A3%E9%99%A4%E8%AF%84%E8%AE%BA%E9%99%90%E5%88%B6')"
+            style="text-align:center">
+            <br />
+            <img src="https://s1.ax1x.com/2023/02/14/pSTwQPA.png" style="width:100px;border-radius:10px" />
+            <p style="text-align:center;font-size:25px">解除编程猫评论限制</p>
+            <p style="text-align:center">来自:coderorangesoft</p>
+            <p style="text-align:center">&nbsp推荐原因：修复那些烦人的评论bug！</p>
+          </div>
+        </div>
+      </h3>
+
+    </div>
   </div>
 </body>
 <footer>
   <div id="op">
-
   </div>
 </footer>
 
