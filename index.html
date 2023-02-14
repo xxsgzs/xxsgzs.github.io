@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!--引入外部程序-->
+<link rel="stylesheet" href="https://unpkg.com/layui@2.6.8/dist/css/layui.css">
+<script src="https://unpkg.com/layui@2.6.8/dist/layui.js"> </script>
+<!--引用完毕-->
 
 <head>
   <meta charset="utf-8">
@@ -40,6 +44,48 @@
     console.log("checkOp version " + functionVersion + " for xxsgzs.github.io ヾ(≧▽≦*)o")
   }
 </script>
+<script>
+  let scriptVersion = "1.0"
+  console.log("layui version" + scriptVersion + "for xxsgzs.github.io ;)")
+  var layer = layui.layer;
+  function layuiAlert(get)
+  {
+    layer.open({
+      title: '提示',
+      content: get,
+      closeBtn:0
+    });     
+  }
+  function layuiWindowAlert(get)
+  {
+    let dialogText = "您似乎要离开本页面，在新的页面中，请保证您的隐私与财产安全！<br />网址：" + get;
+    layer.confirm(dialogText, {
+    title:"提示",closeBtn:0,btn: ['确定','取消'] 
+    ,btn2: function(index, layero){
+    //按钮【按钮三】的回调
+    }
+    }, function(index, layero){
+      window.open(get)
+      layer.closeAll('dialog');
+    }, function(index){
+    //按钮【按钮二】的回调
+    });
+  }
+  function layuiDownload202302(get)
+  {
+    layer.confirm(get, {
+    title:"提示",closeBtn:0,btn: ['确定','取消'] 
+    ,btn2: function(index, layero){
+    //按钮【按钮三】的回调
+    }
+    }, function(index, layero){
+      window.open("https://xxsgzs.github.io/%E5%B0%8F%E5%AD%A6%E7%94%9F%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%A5%E5%AE%A4%E8%80%83%E8%AF%95%E8%AF%95%E9%A2%98A.docx")
+      layer.closeAll('dialog');
+    }, function(index){
+    //按钮【按钮二】的回调
+    });
+  }
+</script>
 <style>
   id {
     color: red
@@ -74,7 +120,7 @@
 
   }
 
-  div {
+  diva {
     display: block;
     background-color: white;
     opacity: 0.7;
@@ -95,13 +141,6 @@
     display: flex;
     justify-content: left;
     gap: 5px;
-  }
-
-  button {
-    background-color: lightblue;
-    width: 150px;
-    height: 30px;
-    font-size: 20px
   }
 
   button:hover {
@@ -133,23 +172,28 @@
     border-radius: 0px;
   }
 </style>
-<header>
-  <h2>
-    <header-top-left id="header-top-left-text">
-      &nbsp>>>&nbsp欢迎来到&nbsp小学生工作室官网!
-    </header-top-left>
-  </h2>
-</header>
 
 <body onload="getTotal();checkOp()">
-  <div>
-    <h1>小学生工作室官网</h1>
+  <ul class="layui-nav layui-bg-green" lay-filter="">
+    <li class="layui-nav-item layui-this layui-bg-green"><a href="../../../../../../../../">首页</a></li>
+  </ul>
+
+  <script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+    var element = layui.element;
+    });
+  </script>
+
+  <diva>
+    <h1 style="font-size:30px"><strong>小学生工作室官网</strong></h1>
+
 
     <hr />
 
     <h2>总述</h2>
     <h3>
-      小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>,建立时间为2022年11月7日
+      小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>,坚信用代码创造美好
       <br />
       目前<id>0</id>级,共有<id id="id"></id>人
     </h3>
@@ -169,73 +213,165 @@
     <h3 id="join_us" style="display:block">
       2023年2月份(最新试卷)
       <br />
-      <button onclick="alert('检测到您要下载【小学生工作室入室考试试题A.docx】,单击确定以进行下载!')"><a href = "https://xxsgzs.github.io/%E5%B0%8F%E5%AD%A6%E7%94%9F%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%A5%E5%AE%A4%E8%80%83%E8%AF%95%E8%AF%95%E9%A2%98A.docx" style="color:black;!important">下载试卷</a></button>
+      <button onclick="layuiDownload202302('检测到您要下载【小学生工作室入室考试试题A.docx】,单击确定以进行下载!')" 	class="layui-btn layui-btn-primary layui-border-blue"><a style="color:#1E9FFF!important" style="color:black;!important">下载试卷</a></button>
+      <button onclick="layuiAlert('暂时没有该资源')" 	class="layui-btn layui-btn-primary layui-border-blue">查看答案</button>
+
     </h3>
 
     <hr />
 
     <h2>加入我们</h2>
     <h3 id="join_us">
-      <button><a href = "https://shequ.codemao.cn/work_shop/16157" style="color:black;!important">进入工作室</a></button>
-      <button onclick="window.open('https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr')">进入QQ群</button>
+      <button 	class="layui-btn layui-btn-primary layui-border-blue" onclick="layuiWindowAlert('https://shequ.codemao.cn/work_shop/16157')"><a style="color:#1E9FFF!important">进入工作室</a></button>
+      <button 	class="layui-btn layui-btn-primary layui-border-blue" onclick="layuiWindowAlert('https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr')" >进入QQ群</button>
     </h3>
 
     <hr />
 
-    <h2>优秀作品展示</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <h2">时间轴</h2>
 
-      <h3 style="display:block">
-        优质Kitten作品
-        <div class="shower">
-          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/174046876')"
-            style="text-align:center">
-            <img src="https://i.328888.xyz/2023/02/14/mUoSH.png" style="width:150px" />
-            <p style="text-align:center;font-size:25px">躲避滑稽</p>
-            <p style="text-align:center">来自:一只滑稽</p>
-            <p style="text-align:center">&nbsp推荐原因：优质的特效与特色的玩法&nbsp</p>
-          </div>
-          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175798325')"
-            style="text-align:center">
-            <img src="https://i.328888.xyz/2023/02/14/mUPgt.png" style="width:270px" />
-            <p style="text-align:center;font-size:25px">OrangeOS</p>
-            <p style="text-align:center">来自:coderorangesoft</p>
-            <p style="text-align:center">&nbsp推荐原因：沉淀多年，拥有丰富的社区&nbsp</p>
-          </div>
-        </div>
-      </h3>
-
-      <h3 style="display:block">
-        优质Python作品
-        <div class="shower">
-          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175863014')"
-            style="text-align:center">
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">今日</h3>
+          <p>
+            凡是过往，皆为序章！
             <br />
-            <img src="https://i.328888.xyz/2023/02/14/mni6d.jpeg" style="width:100px;border-radius:10px" />
-            <p style="text-align:center;font-size:25px">随机数概率生成器</p>
-            <p style="text-align:center">来自:coderorangesoft</p>
-            <p style="text-align:center">&nbsp推荐原因：抽奖小助手！看看自己有多欧！</p>
-          </div>
+            新的一天里，小学生工作室仍在不断进步与发展！让我们共同期待美好的明天！
+          </p>
         </div>
-      </h3>
-
-      <h3 style="display:block">
-        优质javascript脚本
-        <div class="shower">
-          <div class="shower-item"
-            onclick="window.open('https://greasyfork.org/zh-CN/scripts/460007-%E7%BC%96%E7%A8%8B%E7%8C%AB%E7%A4%BE%E5%8C%BA%E8%A7%A3%E9%99%A4%E8%AF%84%E8%AE%BA%E9%99%90%E5%88%B6')"
-            style="text-align:center">
-            <br />
-            <img src="https://s1.ax1x.com/2023/02/14/pSTwQPA.png" style="width:100px;border-radius:10px" />
-            <p style="text-align:center;font-size:25px">解除编程猫评论限制</p>
-            <p style="text-align:center">来自:coderorangesoft</p>
-            <p style="text-align:center">&nbsp推荐原因：修复那些烦人的评论bug！</p>
-          </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2023/2/13</h3>
+          <p>
+            工作室进行第三次打压水作，踢出了涉嫌违反规定的若干人
+          </p>
         </div>
-      </h3>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2023/2/12</h3>
+          <p>
+            工作室提出了选拔人才策略，开始进行入室选拔以及室内选拔
+          </p>
+        </div>
+      </li>
+      <ul class="layui-timeline">
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2023/1/20</h3>
+            <p>
+              工作室合作超10家，同时潜力新星和进阶高手数量暴增
+            </p>
+          </div>
+        </li>
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2023/1/13</h3>
+            <p>
+              为了进一步确保作品质量，工作室连续进行了2次水作打压
+            </p>
+          </div>
+        </li>
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2022/12/25</h3>
+            <p>
+              小学生工作室github注册，同时上线了官网
+            </p>
+          </div>
+        </li>
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2022/12/1</h3>
+            <p>
+              工作室首次突破50人
+            </p>
+          </div>
+        </li>
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2022/11/7</h3>
+            小学生工作室正式确立
+        </li>
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">2021/5/12</h3>
+            <p>橙软工作室正式确立，此后合并为小学生工作室
+            </p>
+          </div>
+        </li>
+        <li class="layui-timeline-item">
+          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+          <div class="layui-timeline-content layui-text">
+            <div class="layui-timeline-title">过去</div>
+          </div>
+        </li>
+      </ul>
 
-    </div>
-  </div>
+      <hr />
+      <h2>优秀作品展示</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:20px">
+
+        <h3 style="display:block">
+          优质Kitten作品
+          <div class="shower">
+            <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/174046876')"
+              style="text-align:center">
+              <img src="https://i.328888.xyz/2023/02/14/mUoSH.png" style="width:150px" />
+              <p style="text-align:center;font-size:25px">躲避滑稽</p>
+              <p style="text-align:center">来自:一只滑稽</p>
+              <p style="text-align:center">&nbsp推荐原因：优质的特效与特色的玩法&nbsp</p>
+            </div>
+            <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175798325')"
+              style="text-align:center">
+              <img src="https://i.328888.xyz/2023/02/14/mUPgt.png" style="width:270px" />
+              <p style="text-align:center;font-size:25px">OrangeOS</p>
+              <p style="text-align:center">来自:coderorangesoft</p>
+              <p style="text-align:center">&nbsp推荐原因：沉淀多年，拥有丰富的社区&nbsp</p>
+            </div>
+          </div>
+        </h3>
+
+        <h3 style="display:block">
+          优质Python作品
+          <div class="shower">
+            <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175863014')"
+              style="text-align:center">
+              <br />
+              <img src="https://i.328888.xyz/2023/02/14/mni6d.jpeg" style="width:100px;border-radius:10px" />
+              <p style="text-align:center;font-size:25px">随机数概率生成器</p>
+              <p style="text-align:center">来自:coderorangesoft</p>
+              <p style="text-align:center">&nbsp推荐原因：抽奖小助手！看看自己有多欧！</p>
+            </div>
+          </div>
+        </h3>
+
+        <h3 style="display:block">
+          优质javascript脚本
+          <div class="shower">
+            <div class="shower-item"
+              onclick="window.open('https://greasyfork.org/zh-CN/scripts/460007-%E7%BC%96%E7%A8%8B%E7%8C%AB%E7%A4%BE%E5%8C%BA%E8%A7%A3%E9%99%A4%E8%AF%84%E8%AE%BA%E9%99%90%E5%88%B6')"
+              style="text-align:center">
+              <br />
+              <img src="https://s1.ax1x.com/2023/02/14/pSTwQPA.png" style="width:100px;border-radius:10px" />
+              <p style="text-align:center;font-size:25px">解除编程猫评论限制</p>
+              <p style="text-align:center">来自:coderorangesoft</p>
+              <p style="text-align:center">&nbsp推荐原因：修复那些烦人的评论bug！</p>
+            </div>
+          </div>
+        </h3>
+      </div>
+  </diva>
 </body>
 <footer>
   <div id="op">
