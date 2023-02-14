@@ -23,17 +23,21 @@
 
 
 <body onload="getTotal();checkOp()">
-  <ul class="layui-nav layui-bg-green" lay-filter="">
-    <li class="layui-nav-item layui-this layui-bg-green"><a href="../../../../../../../../">首页</a></li>
+  <ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a href="/#allSay">总述</a></li>
+    <li class="layui-nav-item"><a href="/#how2join">门槛</a></li>
+    <li class="layui-nav-item"><a href="/#test">入室考试</a></li>
+    <li class="layui-nav-item"><a href="/#joinus">加入我们</a></li>
+    <li class="layui-nav-item"><a href="/#timeline">时间轴</a></li>
+    <li class="layui-nav-item"><a href="/#works"></a>优秀作品展示</li>
   </ul>
 
   <diva>
     <h1 style="font-size:30px"><strong>小学生工作室官网</strong></h1>
 
-
     <hr />
 
-    <h2>总述</h2>
+    <h2 id="allSay">总述</h2>
     <h3>
       小学生工作室是一个以小学生为主体的工作室<s>（当然也不排除中学生）</s>,坚信用代码创造美好
       <br />
@@ -42,7 +46,7 @@
 
     <hr />
 
-    <h2>门槛</h2>
+    <h2 id="how2join">门槛</h2>
     <h3>
       普通成员： 入室考试 <id>60</id> 分
       <br />
@@ -51,7 +55,7 @@
 
     <hr />
 
-    <h2>入室考试</h2>
+    <h2 id = "test">入室考试</h2>
     <h3 id="join_us" style="display:block">
       2023年2月份(最新试卷)
       <br />
@@ -62,7 +66,7 @@
 
     <hr />
 
-    <h2>加入我们</h2>
+    <h2 id="joinus">加入我们</h2>
     <h3 id="join_us">
       <button 	class="layui-btn layui-btn-primary layui-border-blue" onclick="layuiWindowAlert('https://shequ.codemao.cn/work_shop/16157')"><a style="color:#1E9FFF!important">进入工作室</a></button>
       <button 	class="layui-btn layui-btn-primary layui-border-blue" onclick="layuiWindowAlert('https://qm.qq.com/cgi-bin/qm/qr?k=fzZN1GDAMLDPg22ejqDST6nfuISS884-&jump_from=webapi&authKey=kHH6wVauVMCst56/1CnOcF06Rmw9CmNT/bxKKVLeW+g6xusa3xHWo6iMkc+IXnRr')" >进入QQ群</button>
@@ -70,149 +74,150 @@
 
     <hr />
 
-    <h2">时间轴</h2>
+    <h2 id ="timeline">时间轴</h2>
 
-      <li class="layui-timeline-item">
-        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-        <div class="layui-timeline-content layui-text">
-          <h3 class="layui-timeline-title">今日</h3>
-          <p>
-            凡是过往，皆为序章！
-            <br />
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <h3 class="layui-timeline-title">今日</h3>
+        <p>
+          凡是过往，皆为序章！
+          <br />
             新的一天里，小学生工作室仍在不断进步与发展！让我们共同期待美好的明天！
-          </p>
-        </div>
-      </li>
-      <li class="layui-timeline-item">
-        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-        <div class="layui-timeline-content layui-text">
-          <h3 class="layui-timeline-title">2023/2/13</h3>
-          <p>
-            工作室进行第三次打压水作，踢出了涉嫌违反规定的若干人
-          </p>
-        </div>
-      </li>
-      <li class="layui-timeline-item">
-        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-        <div class="layui-timeline-content layui-text">
-          <h3 class="layui-timeline-title">2023/2/12</h3>
-          <p>
-            工作室提出了选拔人才策略，开始进行入室选拔以及室内选拔
-          </p>
-        </div>
-      </li>
-      <ul class="layui-timeline">
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <h3 class="layui-timeline-title">2023/1/20</h3>
-            <p>
-              工作室合作超10家，同时潜力新星和进阶高手数量暴增
-            </p>
-          </div>
-        </li>
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <h3 class="layui-timeline-title">2023/1/13</h3>
-            <p>
-              为了进一步确保作品质量，工作室连续进行了2次水作打压
-            </p>
-          </div>
-        </li>
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <h3 class="layui-timeline-title">2022/12/25</h3>
-            <p>
-              小学生工作室github注册，同时上线了官网
-            </p>
-          </div>
-        </li>
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <h3 class="layui-timeline-title">2022/12/1</h3>
-            <p>
-              工作室首次突破50人
-            </p>
-          </div>
-        </li>
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <h3 class="layui-timeline-title">2022/11/7</h3>
-            小学生工作室正式确立
-        </li>
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <h3 class="layui-timeline-title">2021/5/12</h3>
-            <p>橙软工作室正式确立，此后合并为小学生工作室
-            </p>
-          </div>
-        </li>
-        <li class="layui-timeline-item">
-          <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
-          <div class="layui-timeline-content layui-text">
-            <div class="layui-timeline-title">过去</div>
-          </div>
-        </li>
-      </ul>
-
-      <hr />
-      <h2>优秀作品展示</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:20px">
-
-        <h3 style="display:block">
-          优质Kitten作品
-          <div class="shower">
-            <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/174046876')"
-              style="text-align:center">
-              <img src="https://i.328888.xyz/2023/02/14/mUoSH.png" style="width:150px" />
-              <p style="text-align:center;font-size:25px">躲避滑稽</p>
-              <p style="text-align:center">来自:一只滑稽</p>
-              <p style="text-align:center">&nbsp推荐原因：优质的特效与特色的玩法&nbsp</p>
-            </div>
-            <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175798325')"
-              style="text-align:center">
-              <img src="https://i.328888.xyz/2023/02/14/mUPgt.png" style="width:270px" />
-              <p style="text-align:center;font-size:25px">OrangeOS</p>
-              <p style="text-align:center">来自:coderorangesoft</p>
-              <p style="text-align:center">&nbsp推荐原因：沉淀多年，拥有丰富的社区&nbsp</p>
-            </div>
-          </div>
-        </h3>
-
-        <h3 style="display:block">
-          优质Python作品
-          <div class="shower">
-            <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175863014')"
-              style="text-align:center">
-              <br />
-              <img src="https://i.328888.xyz/2023/02/14/mni6d.jpeg" style="width:100px;border-radius:10px" />
-              <p style="text-align:center;font-size:25px">随机数概率生成器</p>
-              <p style="text-align:center">来自:coderorangesoft</p>
-              <p style="text-align:center">&nbsp推荐原因：抽奖小助手！看看自己有多欧！</p>
-            </div>
-          </div>
-        </h3>
-
-        <h3 style="display:block">
-          优质javascript脚本
-          <div class="shower">
-            <div class="shower-item"
-              onclick="window.open('https://greasyfork.org/zh-CN/scripts/460007-%E7%BC%96%E7%A8%8B%E7%8C%AB%E7%A4%BE%E5%8C%BA%E8%A7%A3%E9%99%A4%E8%AF%84%E8%AE%BA%E9%99%90%E5%88%B6')"
-              style="text-align:center">
-              <br />
-              <img src="https://s1.ax1x.com/2023/02/14/pSTwQPA.png" style="width:100px;border-radius:10px" />
-              <p style="text-align:center;font-size:25px">解除编程猫评论限制</p>
-              <p style="text-align:center">来自:coderorangesoft</p>
-              <p style="text-align:center">&nbsp推荐原因：修复那些烦人的评论bug！</p>
-            </div>
-          </div>
-        </h3>
+        </p>
       </div>
+    </li>
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <h3 class="layui-timeline-title">2023/2/13</h3>
+        <p>
+          工作室进行第三次打压水作，踢出了涉嫌违反规定的若干人
+        </p>
+      </div>
+    </li>
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+      <div class="layui-timeline-content layui-text">
+        <h3 class="layui-timeline-title">2023/2/12</h3>
+        <p>
+          工作室提出了选拔人才策略，开始进行入室选拔以及室内选拔
+        </p>
+      </div>
+    </li>
+    <ul class="layui-timeline">
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2023/1/20</h3>
+          <p>
+            工作室合作超10家，同时潜力新星和进阶高手数量暴增
+          </p>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2023/1/13</h3>
+          <p>
+            为了进一步确保作品质量，工作室连续进行了2次水作打压
+          </p>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2022/12/25</h3>
+          <p>
+            小学生工作室github注册，同时上线了官网
+          </p>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2022/12/1</h3>
+          <p>
+            工作室首次突破50人
+          </p>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2022/11/7</h3>
+          小学生工作室正式确立
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">2021/5/12</h3>
+          <p>橙软工作室正式确立，此后合并为小学生工作室
+          </p>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+          <div class="layui-timeline-title">过去</div>
+        </div>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2 id="works">优秀作品展示</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px">
+
+      <h3 style="display:block">
+        优质Kitten作品
+        <div class="shower">
+          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/174046876')"
+            style="text-align:center">
+            <img src="https://i.328888.xyz/2023/02/14/mUoSH.png" style="width:150px" />
+            <p style="text-align:center;font-size:25px">躲避滑稽</p>
+            <p style="text-align:center">来自:一只滑稽</p>
+            <p style="text-align:center">&nbsp推荐原因：优质的特效与特色的玩法&nbsp</p>
+          </div>
+          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175798325')"
+            style="text-align:center">
+            <img src="https://i.328888.xyz/2023/02/14/mUPgt.png" style="width:270px" />
+            <p style="text-align:center;font-size:25px">OrangeOS</p>
+            <p style="text-align:center">来自:coderorangesoft</p>
+            <p style="text-align:center">&nbsp推荐原因：沉淀多年，拥有丰富的社区&nbsp</p>
+          </div>
+        </div>
+      </h3>
+
+      <h3 style="display:block">
+        优质Python作品
+        <div class="shower">
+          <div class="shower-item" onclick="window.open('https://shequ.codemao.cn/work/175863014')"
+            style="text-align:center">
+            <br />
+            <img src="https://i.328888.xyz/2023/02/14/mni6d.jpeg" style="width:100px;border-radius:10px" />
+            <p style="text-align:center;font-size:25px">随机数概率生成器</p>
+            <p style="text-align:center">来自:coderorangesoft</p>
+            <p style="text-align:center">&nbsp推荐原因：抽奖小助手！看看自己有多欧！</p>
+          </div>
+        </div>
+      </h3>
+
+      <h3 style="display:block">
+        优质javascript脚本
+        <div class="shower">
+          <div class="shower-item"
+            onclick="window.open('https://greasyfork.org/zh-CN/scripts/460007-%E7%BC%96%E7%A8%8B%E7%8C%AB%E7%A4%BE%E5%8C%BA%E8%A7%A3%E9%99%A4%E8%AF%84%E8%AE%BA%E9%99%90%E5%88%B6')"
+            style="text-align:center">
+            <br />
+            <img src="https://s1.ax1x.com/2023/02/14/pSTwQPA.png" style="width:100px;border-radius:10px" />
+            <p style="text-align:center;font-size:25px">解除编程猫评论限制</p>
+            <p style="text-align:center">来自:coderorangesoft</p>
+            <p style="text-align:center">&nbsp推荐原因：修复那些烦人的评论bug！</p>
+          </div>
+        </div>
+      </h3>
+    </div>
   </diva>
 </body>
 <footer>
