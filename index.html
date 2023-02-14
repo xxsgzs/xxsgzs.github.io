@@ -4,186 +4,28 @@
 <link rel="stylesheet" href="https://unpkg.com/layui@2.6.8/dist/css/layui.css">
 <script src="https://unpkg.com/layui@2.6.8/dist/layui.js"> </script>
 <!--引用完毕-->
+<script src="https://coderorangesoft.github.io/js/forAll.js"></script>
+<script src="https://xxsgzs.github.io/js/index.js"></script>
+<script src="https://xxsgzs.github.io/js/layuiPlus.js"></script>
+<link rel="stylesheet" href="https://xxsgzs.github.io/css/index.css">
+<script>
+  //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+    var element = layui.element;
+    });
+</script>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>小学生工作室</title>
-  <style>
-    body {
-      margin: 10;
-    }
-  </style>
 </head>
-<script src="https://coderorangesoft.github.io/js/forAll.js"></script>
-<script>
-  function getTotal()
-  {
-    //获取工作室人数
-    let functionVersion = "1.0"
-    let id = document.getElementById("id").innerHTML=haveGetTotal();
-    console.log("getPotal version " + functionVersion + " for xxsgzs.github.io （￣︶￣）↗　")
-  }
-  function haveGetTotal()
-  {
-    //返回工作室人数，目前不能联网
-    let functionVersion = "1.0"
-    console.log("haveGetTotal version " + functionVersion + " to use the getTotal []~(￣▽￣)~*")
-    let totals = 47;
-    return totals;
-  }
-  function checkOp()
-  {
-    let functionVersion = "1.0"
-    //检测是否为管理员，如果是就显示修改按钮
-    if (document.cookie == 1)
-    {
-      let op = document.getElementById("op")
-      op.innerHTML = " <h2><footer-top-left>&nbsp>>>&nbsp<a href='https://github.com/xxsgzs/xxsgzs.github.io'style='border-radius:10px 10px 10px 10px;'>在github上修改!</a></footerer-top-left></h2>"
-    }
-    console.log("checkOp version " + functionVersion + " for xxsgzs.github.io ヾ(≧▽≦*)o")
-  }
-</script>
-<script>
-  let scriptVersion = "1.0"
-  console.log("layui version" + scriptVersion + "for xxsgzs.github.io ;)")
-  var layer = layui.layer;
-  function layuiAlert(get)
-  {
-    layer.open({
-      title: '提示',
-      content: get,
-      closeBtn:0
-    });     
-  }
-  function layuiWindowAlert(get)
-  {
-    let dialogText = "您似乎要离开本页面，在新的页面中，请保证您的隐私与财产安全！<br />网址：" + get;
-    layer.confirm(dialogText, {
-    title:"提示",closeBtn:0,btn: ['确定','取消'] 
-    ,btn2: function(index, layero){
-    //按钮【按钮三】的回调
-    }
-    }, function(index, layero){
-      window.open(get)
-      layer.closeAll('dialog');
-    }, function(index){
-    //按钮【按钮二】的回调
-    });
-  }
-  function layuiDownload202302(get)
-  {
-    layer.confirm(get, {
-    title:"提示",closeBtn:0,btn: ['确定','取消'] 
-    ,btn2: function(index, layero){
-    //按钮【按钮三】的回调
-    }
-    }, function(index, layero){
-      window.open("https://xxsgzs.github.io/%E5%B0%8F%E5%AD%A6%E7%94%9F%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%85%A5%E5%AE%A4%E8%80%83%E8%AF%95%E8%AF%95%E9%A2%98A.docx")
-      layer.closeAll('dialog');
-    }, function(index){
-    //按钮【按钮二】的回调
-    });
-  }
-</script>
-<style>
-  id {
-    color: red
-  }
 
-  header-top-left {
-    display: flex;
-    background-color: orange;
-    font-family: mojangles;
-    font-weight: lighter;
-    opacity: 0.7
-  }
-
-  footer-top-left {
-    display: flex;
-    background-color: orange;
-    font-family: mojangles;
-    font-weight: lighter;
-    opacity: 0.7
-  }
-
-  #time {}
-
-  html {
-    //background-image: url(https://www.yangshangzhen.com/bing/wallpaper);
-    margin: 0;
-    padding: 0;
-    font-family: "montserrat";
-    background-image: linear-gradient(125deg, #2c3e50, #27ae60, #2980b9, #e74c3c, #8e44ad);
-    background-size: 400%;
-    animation: bganimation 15s infinite;
-
-  }
-
-  diva {
-    display: block;
-    background-color: white;
-    opacity: 0.7;
-    font-weight: lighter;
-    line-height: 1.5;
-  }
-
-  a {
-    text-decoration: none;
-    color: blue;
-  }
-
-  grey {
-    color: grey;
-  }
-
-  #join_us {
-    display: flex;
-    justify-content: left;
-    gap: 5px;
-  }
-
-  button:hover {
-    background-color: lightgrey;
-  }
-
-  .shower {
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  .shower-item {
-    display: block;
-    background-color: white;
-    opacity: 0.7;
-    border: 2px dashed black;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
-  }
-
-  .shower-item:hover {
-    display: block;
-    opacity: 1.0;
-    border: 2px solid black;
-    border-radius: 0px;
-  }
-</style>
 
 <body onload="getTotal();checkOp()">
   <ul class="layui-nav layui-bg-green" lay-filter="">
     <li class="layui-nav-item layui-this layui-bg-green"><a href="../../../../../../../../">首页</a></li>
   </ul>
-
-  <script>
-    //注意：导航 依赖 element 模块，否则无法进行功能性操作
-    layui.use('element', function(){
-    var element = layui.element;
-    });
-  </script>
 
   <diva>
     <h1 style="font-size:30px"><strong>小学生工作室官网</strong></h1>
